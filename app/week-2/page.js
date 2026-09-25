@@ -1,4 +1,5 @@
-import StudentInfo from "./student-info";
+import StudentInfo from "./studentInfo.js";
+import Link from "next/link";
 
 export default function Page() {
   return (
