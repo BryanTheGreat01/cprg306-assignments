@@ -73,7 +73,7 @@ export default function ItemList() {
   };
 
   return (
-    <main>
+    <main className="justify-center bg-slate-600 ml-5">
       <Item items={item1} />
       <Item items={item2} />
       <Item items={item3} />
