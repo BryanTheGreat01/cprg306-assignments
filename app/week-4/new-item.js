@@ -16,7 +16,7 @@ export default function NewItem() {
   };
 
   return (
-    <main className="flex flex-row items-start justify-center min-h-screen py-2">
+    <main className="flex flex-row items-start justify-center min-h-screen py-2 bg-blue-500">
       <button
         onClick={decrement}
         disabled={quantity === 1}
@@ -25,7 +25,9 @@ export default function NewItem() {
         -
       </button>
 
-      <p className="text-white font-bold py-3 px-3">Quantity: {quantity}</p>
+      <p className="text-black font-bold py-2 px-2 bg-amber-50">
+        Quantity: {quantity}
+      </p>
 
       <button
         onClick={increment}
