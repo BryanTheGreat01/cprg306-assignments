@@ -20,7 +20,6 @@ export default function NewItem() {
   return (
     <div className="mx-auto flex flex-row bg-gray-100 rounded border-2 border-black">
       <button
-        id="decrement-button"
         disabled={quantity === 1}
         className="w-8 py-1 text-white bg-blue-600 disabled:bg-slate-400 hover:bg-blue-400"
         onClick={decrementQuantity}
@@ -34,7 +33,6 @@ export default function NewItem() {
         disabled
       />
       <button
-        id="increment-button w-8"
         disabled={quantity === 20}
         className="w-8 py-1 text-white bg-blue-600 disabled:bg-slate-400 hover:bg-blue-400"
         onClick={incrementQuantity}
