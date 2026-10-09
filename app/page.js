@@ -6,7 +6,7 @@ export default function Home() {
     <main>
       <h1> CPRG 306: Web Development 2 - Assignments</h1>
       {weeks.map(week => {
-        return <Link href={`/week-${week}`} className="text-base text-blue-300 block">Go to week {week}</Link>
+        return <Link href={`/week-${week}`} className="text-base text-blue-300 block" key={`week${week}`}>Go to week {week}</Link>
       })}
     </main>
   );
