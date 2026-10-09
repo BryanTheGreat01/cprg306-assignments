@@ -30,7 +30,7 @@ export default function NewItem() {
         className="bg-blue-50 text-4xl w-16 text-center  text-black border-2 border-b-blue-950 rounded-md"
       ></input>
       <button
-        className="bg-slate-500 hover:bg-slate-400 text-7xl w-52 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-md"
+        className="bg-slate-500 hover:bg-slate-400 text-7xl w-52 disabled:bg-gray-300 disabled:cursor-not-allowed rounded-md "
         type="button"
         onClick={increment}
         disabled={quantity == 20}

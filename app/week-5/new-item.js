@@ -44,7 +44,7 @@ export default function NewItem() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-wrap gap-3 flex-row justify-center p-5 bg-blue-100 my-5 w-150 mx-auto rounded-md"
+      className="flex flex-wrap gap-3 flex-row justify-center p-6 bg-blue-100 my-5 w-150 mx-auto rounded-md"
     >
       <input
         type="text"
@@ -85,7 +85,7 @@ export default function NewItem() {
           id="category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="bg-slate-700 rounded-lg px-2.5 text-xl "
+          className="bg-slate-500 rounded-lg px-2.5 text-xl "
         >
           {categories.map((cat) => {
             return (
@@ -96,7 +96,7 @@ export default function NewItem() {
           })}
         </select>
       </div>
-      <button type="submit" className="text-xl font-semibold bg-slate-500 basis-full py-5">
+      <button type="submit" className="text-xl font-semibold bg-slate-700 basis-full py-5">
         Add Item
       </button>
     </form>
