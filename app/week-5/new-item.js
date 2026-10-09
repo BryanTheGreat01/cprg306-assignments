@@ -14,12 +14,11 @@ export default function NewItem() {
     };
     console.log(item);
     alert(
-      "Submitted: " +
+      "Submitted: (Name: " +
         item.name +
-        " (Quantity: " +
+        ") (Quantity: " +
         item.quantity +
-        ")" +
-        " (Category: " +
+        ") (Category: " +
         item.category +
         ")",
     );
@@ -106,6 +105,21 @@ export default function NewItem() {
           </option>
           <option value="canned" className="text-black">
             Canned
+          </option>
+          <option value="Dry goods" className="text-black">
+            Dry Goods
+          </option>
+          <option value="Beverages" className="text-black">
+            Beverages
+          </option>
+          <option value="Snacks" className="text-black">
+            Snacks
+          </option>
+          <option value="Household" className="text-black">
+            Household
+          </option>
+          <option value="Other" className="text-black">
+            Other
           </option>
         </select>
 
