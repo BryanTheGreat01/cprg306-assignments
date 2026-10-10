@@ -21,6 +21,12 @@ export default function Home() {
         Go to week 4
       </Link>
       
+      <br />
+
+      <Link href="/week-5" className="text-base text-blue-300">
+        Go to week 5
+      </Link>
+      
     </main>
   );
 }
