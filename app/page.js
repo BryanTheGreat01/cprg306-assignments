@@ -16,6 +16,10 @@ export default function Page() {
       <Link href="./week-4" className="text-underline text-white">
       Week 4 Assignment
       </Link>
+      <br></br>
+      <Link href="./week-5" className="text-underline text-white">
+      Week 5 Assignment
+      </Link>
     </main>
   );
 }
