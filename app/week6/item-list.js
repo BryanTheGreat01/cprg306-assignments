@@ -6,19 +6,34 @@ import itemData from "./item.json";
 export default function ItemList() {
   const [sortBy, setSortBy] = useState("name");
   let itemCopy = [...itemData];
-  itemCopy.sort((a, b) => a.name.localeCompare(b.name));
+  itemCopy.sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
 
   const handleSort = (e) => {
-    value = e.target.value;
-    if (value != "category") {
-      setSortBy("category");
-    } else if (value != "name") {
-      setSortBy("name");
-    }
+    e.preventDefault();
+    const value = e.target.value;
+    setSortBy(value);
   };
 
   return (
     <main>
+      <form>
+        <button
+          className="w-1/8 bg-blue-400 ml-5 mb-6 mr-4 rounded"
+          value="category"
+          onClick={handleSort}
+        >
+          sort by category
+        </button>
+
+        <button
+          className="w-1/8 bg-blue-400 ml-5 mb-6 mr-4 rounded"
+          value="name"
+          onClick={handleSort}
+        >
+          sort by name
+        </button>
+      </form>
+
       <ul>
         {itemCopy.map((item) => (
           <li key={item.id}>
