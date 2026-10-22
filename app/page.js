@@ -20,7 +20,9 @@ export default function Page() {
         <li className="hover:text-gray-400">
           <Link href="./week-6">Week 6 Assignment</Link>
         </li>
-        
+        <li className="hover:text-gray-400">
+          <Link href="./week-7">Week 7 Assignment</Link>
+        </li>
       </ul>
     </main>
   );
