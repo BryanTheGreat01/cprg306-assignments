@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+
 export default function NewItem({ onAddItem }) {
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState("");
@@ -45,6 +46,7 @@ export default function NewItem({ onAddItem }) {
       >
         <div className="flex flex-row items-start justify-center py-2 ">
           <button
+            type="button"
             onClick={decrement}
             disabled={quantity === 1}
             className="bg-purple-800 hover:bg-purple-600 disabled:text-gray-500 disabled:cursor-not-allowed text-white font-bold py-2 px-4 rounded "
@@ -57,6 +59,7 @@ export default function NewItem({ onAddItem }) {
           </p>
 
           <button
+            type="button"
             onClick={increment}
             disabled={quantity === 20}
             className="bg-purple-800 hover:bg-purple-600 disabled:text-gray-500 disabled:cursor-not-allowed text-white font-bold py-2 px-4 rounded"
