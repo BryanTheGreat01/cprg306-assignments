@@ -31,9 +31,6 @@ export default function ItemList() {
       {itemsData.map((item) => {
         return <Item key={item.id} item={item} />;
       })}
-      {/* {weeks.map(week => {
-        return <Link href={`/week-${week}`} className="text-base text-blue-300 block" key={`week${week}`}>Go to week {week}</Link>
-      })} */}
     </div>
   );
 }
