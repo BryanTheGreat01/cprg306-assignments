@@ -32,7 +32,8 @@ export default function ItemList( { items }) {
         </button>
       </div>
       {itemsCopy.map((item) => {
-        return <Item key={item.name} item={item} />;
+        const id = Math.floor(Math.random() * 100000);
+        return <Item key={id} item={item} />;
       })}
     </div>
   );
