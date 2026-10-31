@@ -8,7 +8,7 @@ export default function ItemList()
     const [sortBy, setSortBy] = useState("name");
 
     let itemCopy = [...itemData];
-    itemCopy.sort((a, b) => a.[sortBy].localCompare(b[sortBy]));
+    itemCopy.sort((a, b) => a[sortBy].localCompare(b[sortBy]));
 
     const handleClick = (e) => {
         const value = e.target.value;
@@ -34,11 +34,11 @@ export default function ItemList()
         
         <div>
             <ul>
-                itemCopy.map((item) => (
+                {itemCopy.map((item) => (
                     <li key={Item.id}>
                     <Item item={Item} />
                     </li>
-                )
+                ))}
             </ul>
         </div>
     </main>
