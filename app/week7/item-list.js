@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ItemComponent from "./item";
 
-export default function ItemList({ items }) {
+export default function ItemList({ items, onItemSelect }) {
   const [sortBy, setSortBy] = useState("name");
   const itemCopy = [...items];
   itemCopy.sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
@@ -36,7 +36,7 @@ export default function ItemList({ items }) {
       <ul>
         {itemCopy.map((item) => (
           <li key={item.id}>
-            <ItemComponent item={item} />
+            <ItemComponent item={item} onSelect={() => onItemSelect(item)} />
           </li>
         ))}
       </ul>
