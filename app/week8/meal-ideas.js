@@ -6,29 +6,41 @@ async function fetchMealIdeas(ingredients) {
     `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredients}`,
   );
   const data = await response.json();
-  return data.meals;
+  return data.meals ?? [];
 }
 
 export default function MealIdeas({ ingredients }) {
   const [meals, setMeals] = useState([]);
 
-  const loadMealIdeas = async () => {
-    const newMeals = await fetchMealIdeas(ingredients);
-    setMeals(newMeals);
-  };
-
   useEffect(() => {
-    loadMealIdeas();
+    if (!ingredients) {
+      setMeals([]);
+      return;
+    }
+    async function loadMeals() {
+      const mealIdeas = await fetchMealIdeas(ingredients);
+      setMeals(mealIdeas);
+    }
+    loadMeals();
   }, [ingredients]);
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-blue-600">List of Meals</h1>
-      <select>
+      <h1 className="text-2xl font-bold text-blue-600">
+        {ingredients ? `Meal ideas for "${ingredients}"` : "No item selected"}
+      </h1>
+
+      {ingredients && meals.length === 0 && (
+        <p className="text-red-600">No meal ideas found for this ingredient.</p>
+      )}
+
+      <ul className="grid grid-cols-2 gap-3">
         {meals.map((meal) => (
-          <option key={meal.idMeal}>{meal.strMeal}</option>
+          <li key={meal.idMeal} className="bg-black-200 p-2 rounded">
+            <h2 className="text-lg font-semibold">{meal.strMeal}</h2>
+          </li>
         ))}
-      </select>
+      </ul>
     </div>
   );
 }

@@ -28,6 +28,7 @@ export default function Page() {
       <h1 className="text-2xl font-bold mb-4 mt-5 ml-5">Shopping List</h1>
       <ItemList items={items} onItemSelect={handleItemSelect} />
       <Meals ingredients={selectedItemName} />
+      <NewItem onAddItem={handleAddItem} />
     </main>
   );
 }
