@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Item from "./item.js";
 
-export default function ItemList( { items }) {
+export default function ItemList( { items, onItemSelect }) {
   let [sortBy, setSortBy] = useState("name");
   let itemsCopy = [...items]
 
@@ -12,12 +12,18 @@ export default function ItemList( { items }) {
     itemsCopy.sort((a, b) => a.category.localeCompare(b.category));
   }
 
+  function renderIngredients() {
+    return itemsCopy.map((item) => {
+        const id = Math.floor(Math.random() * 1000000);
+        return <Item key={id} item={item} onSelect={onItemSelect}/>;
+      })
+  }
   return (
     <div>
       <div className="flex gap-2 mb-2">
         {/* Sorting buttons */}
         <button
-          className={`p-4 rounded font-bold 
+          className={`p-4 rounded font-bold
           ${sortBy == 'name' ? "bg-yellow-400": "bg-slate-500"}`}
           onClick={() => setSortBy("name")}
         >
@@ -31,10 +37,7 @@ export default function ItemList( { items }) {
           Sort by Category
         </button>
       </div>
-      {itemsCopy.map((item) => {
-        const id = Math.floor(Math.random() * 100000);
-        return <Item key={id} item={item} />;
-      })}
+      {renderIngredients()}
     </div>
   );
 }
