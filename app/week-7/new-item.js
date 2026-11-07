@@ -58,7 +58,8 @@ export default function NewItem() {
              text-center
              font-bold
             text-black"
-            value={quantity}>
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}>
             </input>
         </div>
 

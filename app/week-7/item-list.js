@@ -35,8 +35,8 @@ export default function ItemList({items})
         <div>
             <ul>
                 {itemCopy.map((item) => (
-                    <li key={Item.id}>
-                    <Item item={Item} />
+                    <li key={item.id}>
+                    <Item item={item} />
                     </li>
                 ))}
             </ul>
