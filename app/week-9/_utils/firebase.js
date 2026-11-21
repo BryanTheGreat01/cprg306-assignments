@@ -8,7 +8,7 @@ import {
   signOut,
 } from "firebase/auth";
 
-// Firebase configuration
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyB1Cnm585jE-NCo_zfUrP82AzQOO-zozxY",
   authDomain: "cprg306-assignments-34746.firebaseapp.com",
@@ -19,12 +19,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const app = getApps().length > 0
+  ? getApp()
+  : initializeApp(firebaseConfig);
 
-// Initialize Authentication
+// Initialize Firebase Authentication
 export const auth = getAuth(app);
 
-// GitHub authentication provider
+// Create GitHub authentication provider
 const githubProvider = new GithubAuthProvider();
 
 // GitHub sign-in function
@@ -36,5 +38,4 @@ export function gitHubSignIn() {
 export function logOut() {
   return signOut(auth);
 }
-
 
